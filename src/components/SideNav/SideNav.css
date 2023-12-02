@@ -1,0 +1,55 @@
+.SideNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  bottom: 1rem;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(46, 47, 57);
+  border-radius: 1.2rem;
+}
+
+.nav-links {
+  color: rgb(129, 130, 140);
+  display: grid;
+  /* gap: 1.5rem; */
+  place-items: center;
+}
+.nav-links li {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+  border-left: 3px solid transparent;
+  transition: 0.3s;
+}
+.nav-links li:hover {
+  color: #fff;
+  border-left: 3px solid rgb(196, 222, 226);
+  background-color: rgb(196, 222, 226, 0.5);
+  cursor: pointer;
+}
+.nav-links li:first-child {
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.25s;
+}
+
+span {
+  padding: 0.5rem;
+  color: rgb(129, 130, 140);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+span:hover {
+  color: #fff;
+  background-color: rgb(196, 222, 226, 0.4);
+  cursor: pointer;
+}

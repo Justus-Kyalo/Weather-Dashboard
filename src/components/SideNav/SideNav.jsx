@@ -5,6 +5,7 @@ import { FaRegStar, FaRegUser, FaRegBell } from "react-icons/fa";
 import { BsStopwatch } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GrAppsRounded } from "react-icons/gr";
+import { IoMdPower } from "react-icons/io";
 
 const SideNav = () => {
   return (
@@ -38,6 +39,9 @@ const SideNav = () => {
           <IoSettingsOutline />
         </li>
       </ul>
+    
+       <span> <IoMdPower /></span>
+      
     </div>
   );
 };
