@@ -1,9 +1,45 @@
-import React from 'react'
+import "./SideNav.css";
+import { TiSocialGooglePlus } from "react-icons/ti";
+import { FiCompass, FiMapPin } from "react-icons/fi";
+import { FaRegStar, FaRegUser, FaRegBell } from "react-icons/fa";
+import { BsStopwatch } from "react-icons/bs";
+import { IoSettingsOutline } from "react-icons/io5";
+import { GrAppsRounded } from "react-icons/gr";
 
 const SideNav = () => {
   return (
-    <div>SideNav</div>
-  )
-}
+    <div className="SideNav">
+      <ul className="nav-links">
+        <li>
+          <TiSocialGooglePlus />
+        </li>
+        <li>
+          <FaRegUser />
+        </li>
+        <li>
+          <FaRegBell />
+        </li>
+        <li>
+          <GrAppsRounded />
+        </li>
+        <li>
+          <FiCompass />
+        </li>
+        <li>
+          <FiMapPin />
+        </li>
+        <li>
+          <FaRegStar />
+        </li>
+        <li>
+          <BsStopwatch />
+        </li>
+        <li>
+          <IoSettingsOutline />
+        </li>
+      </ul>
+    </div>
+  );
+};
 
-export default SideNav
+export default SideNav;
