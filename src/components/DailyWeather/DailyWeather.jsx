@@ -1,20 +1,26 @@
 import React from "react";
 import "./DailyWeather.css";
-const DailyWeather = () => {
+const DailyWeather = ({ data }) => {
   return (
-    <div>
-      {/* <div>
-        <div className="current-weather">
-          <img src="/mist.png" alt="" />
+    <div className="Dailyweather">
+      <div className="current-weather">
+        <div>
+          <h4>{data.location.name}</h4>
+          <p>{data.location.country}</p>
         </div>
         <div>
-          <h4>Berlin</h4>
-          <p>Germany</p>
+          <h4>{data.current.temp_c}</h4>
+          <p>Temperature</p>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> */}
+        <div>
+          <h4>{data.current.humidity}%</h4>
+          <p>Humididty</p>
+        </div>
+        <div>
+          <h4>{data.current.wind_kph}</h4>
+          <p>Wind Speed</p>
+        </div>
+      </div>
     </div>
   );
 };

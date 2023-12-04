@@ -1,15 +1,15 @@
 import "./App.css";
 import Home from "./components/Home/Home";
-import UseAxiosFetch from "./hooks/UseAxiosFetch";
+import useAxiosFetch from "./hooks/useAxiosFetch";
 
 function App() {
-  const { data, fetchError } = UseAxiosFetch("london");
+  const { data, fetchError, isLoading } = useAxiosFetch("london");
   console.log(data);
-  return (
+  return !isLoading && !fetchError ? (
     <div className="App">
-      <Home />
+      <Home data={data} />
     </div>
-  );
+  ) : null;
 }
 
 export default App;

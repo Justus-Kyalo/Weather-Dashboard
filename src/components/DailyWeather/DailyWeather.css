@@ -1,0 +1,9 @@
+.DailyWeather{
+  padding: 1rem;
+  
+}
+.current-weather{
+  display: flex;
+  gap: 1rem;
+  color: rgb(226,227,229);
+}

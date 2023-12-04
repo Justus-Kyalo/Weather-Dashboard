@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const UseAxiosFetch = ( params ='nairobi') => {
+const useAxiosFetch = (params = "nairobi") => {
   const [data, setData] = useState([]);
   const [fetchError, setFetchError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
+
     const fetchData = async (city) => {
       const options = {
         method: "GET",
@@ -23,20 +25,27 @@ const UseAxiosFetch = ( params ='nairobi') => {
         if (isMounted) {
           const response = await axios.request(options);
           setData(response.data);
-          console.log(data);
+          setFetchError(null);
         }
       } catch (error) {
         if (isMounted) {
-          setFetchError(error);
-          console.log(`failet to fetch:${error.message}`);
+          setFetchError(error.message);
+          console.log(`Failed to fetch: ${error.message}`);
+          setData([]);
         }
+      } finally {
+        isMounted && setIsLoading(false);
       }
     };
+
     fetchData(params);
-    return () => (isMounted = false);
+
+    return () => {
+      isMounted = false;
+    };
   }, [params]);
 
-  return { fetchError, data };
+  return { fetchError, data, isLoading };
 };
 
-export default UseAxiosFetch;
+export default useAxiosFetch;
