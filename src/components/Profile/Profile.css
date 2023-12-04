@@ -1,0 +1,24 @@
+.Profile {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 80px 180px;
+  place-items: center;
+  gap: 0rem;
+}
+.profile-img {
+  padding: 1rem;
+}
+.profile-img img {
+  border-radius: 50%;
+}
+
+.profile-bio p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: rgb(157, 154, 160);
+}
+.profile-bio h3 {
+  color: rgb(196, 197, 196);
+  line-height: 1.8rem;
+  font-weight: 400;
+}
