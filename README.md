@@ -1,4 +1,13 @@
-# React + Vite
+# Weather App
+
+An app that shows the weather of a city with
+data sourced from [WeatherApi](https://rapidapi.com/weatherapi/api/weatherapi-com).
+
+## Design
+
+![Weather App UI](./public/weather-app-ui.jpg "Weather App UI")
+
+## Built with React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
