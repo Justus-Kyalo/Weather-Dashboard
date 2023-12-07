@@ -1,8 +1,42 @@
-import React from "react";
 import "./DailyWeather.css";
-import { IoIosPartlySunny } from "react-icons/io";
-const DailyWeather = ({ data }) => {
+import { IoIosPartlySunny, IoIosSunny } from "react-icons/io";
+import { FaCloudRain } from "react-icons/fa6";
+import { BsFillCloudSunFill } from "react-icons/bs";
+import { FaRegSnowflake } from "react-icons/fa";
+import { IoThunderstorm } from "react-icons/io5";
+import { TbMist } from "react-icons/tb";
+const DailyWeather = ({ data, forecast }) => {
   const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
+
+  const forecastArr = forecast;
+
+  const fixFn = (obj) => {
+    const weather = obj.weather[0].main;
+
+    if (weather === "Rain") {
+      return <FaCloudRain />;
+    }
+    if (weather === "Clear") {
+      return <IoIosSunny />;
+    }
+    if (weather === "Drizzle") {
+      return <IoIosPartlySunny />;
+    }
+    if (weather === "Clouds") {
+      return <BsFillCloudSunFill />;
+    }
+    if (weather === "Snow") {
+      return <FaRegSnowflake />;
+    }
+    if (weather === "Thunderstorm") {
+      return <IoThunderstorm />;
+    }
+    if (weather === "Mist") {
+      return <TbMist />;
+    }
+
+    return null;
+  };
 
   return (
     <div className="DailyWeather">
@@ -33,13 +67,22 @@ const DailyWeather = ({ data }) => {
           <p>Wind Speed</p>
         </div>
       </div>
-      <div className="daily-forecast">
-        <div>
-          <p>09 am</p>
-          <div className="icons">
-            <IoIosPartlySunny />
-          </div>
-          <p>17</p>
+
+      <div className="forecast">
+        <div className="daily-forecast">
+          {forecastArr.map((obj, index) => {
+            const time = new Date(obj.dt_txt).toLocaleTimeString([], {
+              hour: "2-digit",
+              hour12: true,
+            });
+            return (
+              <div key={index}>
+                <p>{time}</p>
+                <div className="icons">{fixFn(obj)}</div>
+                <p>{(obj.main.temp - 273.15).toFixed(2)}&deg;</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
