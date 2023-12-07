@@ -1,7 +1,9 @@
-import React from "react";
+
 import "./Profile.css";
+import format from "date-fns/format";
 
 const Profile = () => {
+
   return (
     <div className="Profile">
       <div className="profile-img">
@@ -9,10 +11,11 @@ const Profile = () => {
       </div>
       <div className="profile-bio">
         <p>Hi,Elizabeth</p>
-        <h3>Mon, 15 May, 2023</h3>
+        <h3>{format(new Date(), "EEE, dd MMM, yyyy")}</h3>
       </div>
     </div>
   );
 };
+
 
 export default Profile;
