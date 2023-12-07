@@ -1,12 +1,13 @@
 .Profile {
-  position: absolute;
   display: grid;
-  grid-template-columns: 80px 180px;
+  grid-template-columns: 60px 1fr;
   place-items: center;
-  gap: 0rem;
+  max-width: 300px;
+ 
 }
 .profile-img {
-  padding: 1rem;
+  
+  padding: 1rem 1rem 1rem 0rem;
 }
 .profile-img img {
   border-radius: 50%;

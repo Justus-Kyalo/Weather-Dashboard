@@ -17,7 +17,6 @@
 .nav-links {
   color: rgb(129, 130, 140);
   display: grid;
-  /* gap: 1.5rem; */
   place-items: center;
 }
 .nav-links li {
@@ -42,13 +41,13 @@
   transition: 0.25s;
 }
 
-span {
+.power-btn {
   padding: 0.5rem;
   color: rgb(129, 130, 140);
   border-radius: 50%;
   transition: 0.3s;
 }
-span:hover {
+.power-btn:hover {
   color: #fff;
   background-color: rgb(196, 222, 226, 0.4);
   cursor: pointer;

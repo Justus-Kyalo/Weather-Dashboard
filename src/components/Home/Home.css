@@ -5,10 +5,12 @@ main {
   grid-template-columns: 100px auto;
   padding-top: 1rem;
 }
+.main-section {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+}
 
-.left-section{
+.left-section {
   display: flex;
   flex-direction: column;
-  row-gap:8rem ;
- 
 }

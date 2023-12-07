@@ -40,7 +40,7 @@ const SideNav = () => {
         </li>
       </ul>
     
-       <span> <IoMdPower /></span>
+       <span className="power-btn"> <IoMdPower /></span>
       
     </div>
   );

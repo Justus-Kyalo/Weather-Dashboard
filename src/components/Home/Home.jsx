@@ -9,9 +9,18 @@ const Home = ({ data }) => {
       <section>
         <SideNav />
       </section>
-      <section className="left-section">
-       <div> <Profile /></div>
-       <div> <DailyWeather data={data} /></div>
+      <section className="main-section">
+        <section className="left-section">
+          <div>
+            
+            <Profile />
+          </div>
+          <div>
+           
+            <DailyWeather data={data} />
+          </div>
+        </section>
+        <section className="right-section"></section>
       </section>
     </main>
   );
