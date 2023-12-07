@@ -3,7 +3,7 @@ import SideNav from "../SideNav/SideNav";
 import Profile from "../Profile/Profile";
 import DailyWeather from "../DailyWeather/DailyWeather";
 
-const Home = ({ data }) => {
+const Home = ({ data, forecast }) => {
   return (
     <main>
       <section>
@@ -12,12 +12,10 @@ const Home = ({ data }) => {
       <section className="main-section">
         <section className="left-section">
           <div>
-            
             <Profile />
           </div>
           <div>
-           
-            <DailyWeather data={data} />
+            <DailyWeather data={data} forecast={forecast} />
           </div>
         </section>
         <section className="right-section"></section>

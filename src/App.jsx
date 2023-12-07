@@ -3,11 +3,11 @@ import Home from "./components/Home/Home";
 import useAxiosFetch from "./hooks/useAxiosFetch";
 
 function App() {
-  const { data, fetchError, isLoading } = useAxiosFetch("london");
-  console.log(data);
+  const { data, fetchError, isLoading, forecast } = useAxiosFetch("london");
+  // console.log(data);
   return !isLoading && !fetchError ? (
     <div className="App">
-      <Home data={data} />
+      <Home data={data} forecast={forecast} />
     </div>
   ) : null;
 }
