@@ -16,7 +16,7 @@ const useAxiosFetch = (params = "nairobi") => {
     let isMounted = true;
     const apiUrl =
       "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-    const apiKey = "";
+    const apiKey = "aa57f8effc10b239859b1dfb9425a9be";
 
     const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=`;
     const limit = 1;
