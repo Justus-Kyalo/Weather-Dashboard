@@ -1,0 +1,94 @@
+.SearchBar {
+  display: grid;
+  grid-template-columns: 1fr 0.15fr 0.55fr;
+  gap: 1rem;
+  justify-content: space-around;
+
+}
+.search-input {
+  height: 30px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(47, 47, 56);
+  padding: 1rem 0rem 1rem 2rem;
+  color: rgb(198, 231, 232);
+  font-size: 0.9rem;
+}
+.search-input::placeholder {
+  color: rgb(198, 231, 232);
+}
+.search-input:focus {
+  outline: none;
+}
+form {
+  position: relative;
+}
+.icon-btn {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none;
+  font-size: 1.3rem;
+  color: rgb(198, 231, 232);
+  background-color: transparent;
+}
+
+select{
+  border: none;
+  background-color: rgb(47, 47, 56);
+  padding: 0rem 0.5rem;
+  color: rgb(198, 231, 232);
+  border-radius: 15px;
+  
+}
+.toggle-temp {
+  background-color: rgb(47, 47, 56);
+  display: inline-flex;
+  height: 30px;
+  width: 60px;
+  border-radius: 60px;
+  cursor: pointer;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-temp::before {
+  position: absolute;
+  content: "";
+  background-color: rgb(198, 231, 232);
+  height: 24px;
+  width: 28px;
+  border-radius: 60px;
+  margin: 1px;
+  transition: 0.2s;
+}
+
+input:checked + .toggle-temp {
+  transition: 0.2s;
+}
+
+input:checked + .toggle-temp::before {
+  transform: translateX(30px);
+}
+.check {
+  display: none;
+}
+
+.toggle-temp i {
+  z-index: 1;
+  width: 50%;
+  padding: 0.45rem;
+}
+
+input:checked + .toggle-temp i:first-child {
+  color: rgb(198, 231, 232);
+}
+input:not(:checked) + .toggle-temp i:last-child {
+  color: rgb(198, 231, 232);
+}

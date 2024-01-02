@@ -5,12 +5,17 @@ main {
   grid-template-columns: 100px auto;
   padding-top: 1rem;
 }
-.main-section {
+
+
+.first-row{
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.3fr 1fr;;
+  align-items: center;
+  padding: 0rem 1rem ;
+  gap: 3rem;
 }
 
-.left-section {
-  display: flex;
-  flex-direction: column;
+.second-row{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
 }

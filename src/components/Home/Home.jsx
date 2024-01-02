@@ -4,20 +4,21 @@ import Profile from "../Profile/Profile";
 import DailyWeather from "../DailyWeather/DailyWeather";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchCurrentWeather,
   selectCurrentWeather,
+  getCurrentStatus,
 } from "../../Reducers/currentWeather/currentWeatherSlice";
 import {
   fetchForecastWeather,
   selectForecastWeather,
 } from "../../Reducers/forecastWeather/forecastWeatherSlice";
 import { getForecastStatus } from "../../Reducers/forecastWeather/forecastWeatherSlice";
-import { getCurrentStatus } from "../../Reducers/currentWeather/currentWeatherSlice";
-import { useEffect, useState } from "react";
+import {} from "../../Reducers/currentWeather/currentWeatherSlice";
+import { useEffect } from "react";
 import {
   getCoordinatesStatus,
   selectAllCoordinates,
 } from "../../Reducers/coordinates/coordinatesSlice";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Home = () => {
   const data = useSelector(selectCurrentWeather);
@@ -45,10 +46,17 @@ const Home = () => {
         <SideNav />
       </section>
       <section className="main-section">
-        <section className="left-section">
-          <div>
-            <Profile />
-          </div>
+        
+          <section className="first-row">
+            <div>
+              <Profile />
+            </div>
+            <div>
+              <SearchBar />
+            </div>
+          </section>
+          
+          <section className="second-row">
           <div>
             {currentStatus === "success" && forecastStatus === "success" ? (
               <DailyWeather data={data[1]} forecast={forecast} />
@@ -56,9 +64,12 @@ const Home = () => {
               <p>...</p>
             )}
           </div>
-        </section>
-        <section className="right-section"></section>
-      </section>
+          <div>
+
+          </div>
+          </section>
+       
+         </section>
     </main>
   );
 };
