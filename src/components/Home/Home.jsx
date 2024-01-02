@@ -13,7 +13,7 @@ import {
 } from "../../Reducers/forecastWeather/forecastWeatherSlice";
 import { getForecastStatus } from "../../Reducers/forecastWeather/forecastWeatherSlice";
 import {} from "../../Reducers/currentWeather/currentWeatherSlice";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import {
   getCoordinatesStatus,
   selectAllCoordinates,
@@ -39,24 +39,23 @@ const Home = () => {
         })
       );
     }
-  }, [coordinates]);
+  }, [coordinates,dispatch]);
   return (
     <main>
       <section>
         <SideNav />
       </section>
       <section className="main-section">
-        
-          <section className="first-row">
-            <div>
-              <Profile />
-            </div>
-            <div>
-              <SearchBar />
-            </div>
-          </section>
-          
-          <section className="second-row">
+        <section className="first-row">
+          <div>
+            <Profile />
+          </div>
+          <div>
+            <SearchBar />
+          </div>
+        </section>
+
+        <section className="second-row">
           <div>
             {currentStatus === "success" && forecastStatus === "success" ? (
               <DailyWeather data={data[1]} forecast={forecast} />
@@ -64,14 +63,11 @@ const Home = () => {
               <p>...</p>
             )}
           </div>
-          <div>
-
-          </div>
-          </section>
-       
-         </section>
+          <div></div>
+        </section>
+      </section>
     </main>
   );
 };
 
-export default Home;
+export default memo(Home);

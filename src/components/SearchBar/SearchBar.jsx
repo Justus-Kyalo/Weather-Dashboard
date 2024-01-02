@@ -1,11 +1,35 @@
+import { useDispatch } from "react-redux";
+import { fetchCoordinates } from "../../Reducers/coordinates/coordinatesSlice";
 import "./SearchBar.css";
+import { useState } from "react";
+import { fetchCurrentWeather } from "../../Reducers/currentWeather/currentWeatherSlice";
 
 const SearchBar = () => {
+  const [city, setCity] = useState("");
+  const dispatch = useDispatch();
+  const onSearch = (e) => {
+    e.preventDefault();
+    dispatch(fetchCoordinates(city));
+    dispatch(fetchCurrentWeather(city));
+  };
+
   return (
     <div className="SearchBar">
-      <form action="">
-        <input type="text" placeholder="Search City" className="search-input" />
-        <button className="icon-btn">
+      <form
+        onSubmit={(e) => {
+          onSearch(e);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Search City"
+          className="search-input"
+          value={city}
+          onChange={(e) => {
+            setCity(e.target.value);
+          }}
+        />
+        <button type="submit" className="icon-btn">
           <i className="ri-search-line"></i>
         </button>
       </form>

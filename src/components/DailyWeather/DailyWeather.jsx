@@ -5,15 +5,14 @@ import { BsFillCloudSunFill } from "react-icons/bs";
 import { FaRegSnowflake } from "react-icons/fa";
 import { IoThunderstorm } from "react-icons/io5";
 import { TbMist } from "react-icons/tb";
-import { getForecastStatus } from "../../Reducers/forecastWeather/forecastWeatherSlice";
-import { getCurrentStatus } from "../../Reducers/currentWeather/currentWeatherSlice";
+import { memo } from "react";
 
 const DailyWeather = ({ data, forecast }) => {
   const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   const forecastArr = forecast[0].list;
 
-
+  console.log("componente rendering");
   const fixFn = (obj) => {
     const weather = obj.weather[0].main;
 
@@ -91,7 +90,6 @@ const DailyWeather = ({ data, forecast }) => {
       </div>
     </div>
   );
-  
 };
 
-export default DailyWeather;
+export default memo(DailyWeather);

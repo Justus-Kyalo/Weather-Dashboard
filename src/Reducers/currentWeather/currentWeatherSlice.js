@@ -12,7 +12,7 @@ const initialState = currentWeatherAdapter.getInitialState({ status: "idle" });
 
 export const fetchCurrentWeather = createAsyncThunk(
   "currentWeather/fetchCurrentWeather",
-  async (city = "Nairobi") => {
+  async (city ) => {
     try {
       const apiUrl =
         "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";

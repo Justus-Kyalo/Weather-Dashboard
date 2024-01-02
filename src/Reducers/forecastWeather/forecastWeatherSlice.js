@@ -14,7 +14,7 @@ const initialState = forecastWeatherAdapter.getInitialState({
 
 export const fetchForecastWeather = createAsyncThunk(
   "forecastWeather/fetchForecastWeather",
-  async (coordinates = { lat: 51.5073219, lon: -0.1276474 }) => {
+  async (coordinates ) => {
     try {
       const apiKey = "aa57f8effc10b239859b1dfb9425a9be";
       const forecastApiUrl =

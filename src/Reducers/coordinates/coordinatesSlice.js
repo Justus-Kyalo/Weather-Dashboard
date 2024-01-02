@@ -12,7 +12,7 @@ const initialState = coordinatesAdapter.getInitialState({ status: "idle" });
 
 export const fetchCoordinates = createAsyncThunk(
   "coordinates/fetchCoordinates",
-  async (city = "Nairobi") => {
+  async (city) => {
     const apiKey = "aa57f8effc10b239859b1dfb9425a9be";
 
     const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=`;
