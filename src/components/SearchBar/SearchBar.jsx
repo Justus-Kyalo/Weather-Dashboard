@@ -1,6 +1,6 @@
+import "./SearchBar.css";
 import { useDispatch } from "react-redux";
 import { fetchCoordinates } from "../../Reducers/coordinates/coordinatesSlice";
-import "./SearchBar.css";
 import { useState } from "react";
 import { fetchCurrentWeather } from "../../Reducers/currentWeather/currentWeatherSlice";
 

@@ -19,6 +19,7 @@ import {
   selectAllCoordinates,
 } from "../../Reducers/coordinates/coordinatesSlice";
 import SearchBar from "../SearchBar/SearchBar";
+import LocationMap from "../LocationMap/LocationMap";
 
 const Home = () => {
   const data = useSelector(selectCurrentWeather);
@@ -39,7 +40,7 @@ const Home = () => {
         })
       );
     }
-  }, [coordinates,dispatch]);
+  }, [coordinates, dispatch]);
   return (
     <main>
       <section>
@@ -63,7 +64,10 @@ const Home = () => {
               <p>...</p>
             )}
           </div>
-          <div></div>
+          <div>
+            {coordStatus === "success" ? ( <LocationMap />) :<p>loading ...</p>}
+           
+          </div>
         </section>
       </section>
     </main>
