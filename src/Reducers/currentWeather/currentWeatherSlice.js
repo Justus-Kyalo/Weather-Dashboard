@@ -34,7 +34,7 @@ export const currentWeatherSlice = createSlice({
     builder.addCase(fetchCurrentWeather.fulfilled, (state, action) => {
       state.status = "success";
 
-      const loadedData = [{ id: action.payload }, { ...action.payload }];
+      const loadedData = [{ id: nanoid() }, { ...action.payload }];
       currentWeatherAdapter.upsertMany(state, loadedData);
     });
   },

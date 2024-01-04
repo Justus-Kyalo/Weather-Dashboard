@@ -6,16 +6,17 @@ main {
   padding-top: 1rem;
 }
 
-
-.first-row{
+.first-row {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;;
+  grid-template-columns: 1.3fr 1fr;
   align-items: center;
-  padding: 0rem 1rem ;
+  padding: 0rem 1rem;
   gap: 3rem;
 }
 
-.second-row{
+.second-row,
+.third-row {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
+  margin: 1rem 0rem 2rem 0rem;
 }

@@ -7,8 +7,8 @@ import { store } from "./app/store.js";
 import { fetchCoordinates } from "./Reducers/coordinates/coordinatesSlice.js";
 import { fetchCurrentWeather } from "./Reducers/currentWeather/currentWeatherSlice.js";
 
-store.dispatch(fetchCoordinates("nairobi"));
-store.dispatch(fetchCurrentWeather("nairobi"));
+store.dispatch(fetchCoordinates("berlin"));
+store.dispatch(fetchCurrentWeather("berlin"));
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

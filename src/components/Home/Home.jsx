@@ -20,6 +20,7 @@ import {
 } from "../../Reducers/coordinates/coordinatesSlice";
 import SearchBar from "../SearchBar/SearchBar";
 import LocationMap from "../LocationMap/LocationMap";
+import HumidityGraph from "../Overview/HumidityGraph";
 
 const Home = () => {
   const data = useSelector(selectCurrentWeather);
@@ -65,8 +66,17 @@ const Home = () => {
             )}
           </div>
           <div>
-            {coordStatus === "success" ? ( <LocationMap />) :<p>loading ...</p>}
-           
+            {coordStatus === "success" ? <LocationMap /> : <p>loading ...</p>}
+          </div>
+        </section>
+        <section className="third-row">
+          <div>
+            {" "}
+            {forecastStatus === "success" ? (
+              <HumidityGraph forecast={forecast} />
+            ) : (
+              <p>...</p>
+            )}
           </div>
         </section>
       </section>

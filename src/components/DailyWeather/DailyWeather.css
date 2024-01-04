@@ -33,7 +33,7 @@ p {
   gap: 0.5rem;
 }
 .daily-forecast > div {
-  background-color: rgb(198, 231, 232);
+  background-color: #c6e7e8;
   max-width: 3rem;
   border-radius: 1rem;
   padding: 0.7rem;
