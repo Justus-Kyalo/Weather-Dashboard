@@ -23,7 +23,7 @@ export const fetchForecastWeather = createAsyncThunk(
         forecastApiUrl +
           `lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`
       );
-      //console.log(forecastRes.data);
+      console.log(forecastRes.data);
       return forecastRes.data;
     } catch (err) {
       return err.message;
